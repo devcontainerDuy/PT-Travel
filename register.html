@@ -1,0 +1,178 @@
+<!-- login.html -->
+<main class="container-fluid p-0 m-0">
+    <nav class="card">
+        <div class=""
+            style="filter: brightness(0.3);background-image: url(img/full01.jpg); background-position: 50% 50%; background-repeat: no-repeat !important; background-size: cover !important; width: 100%; height: 620px;">
+        </div>
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+            <div class="container">
+                <div class="row w-100">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="card-body text-center text-white">
+                                        <h4 class="card-title text-uppercase fw-bold">Du lịch giải sầu - quên hết âu
+                                            lo</h4>
+                                        <div class="card-text fw-bold">
+                                            <p>Nhanh tay tìm kiếm Tour và đặt Tour tại PT Travel để nhận được nhiều
+                                                ưu đãi!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-auto justify-content-center" style="max-width:680px">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-5 col-5 bg-white border border-1 rounded-start p-0 m-0">
+                                <select class="form-select border-0" id="sel1" name="sellist1">
+                                    <option value="">Chọn điểm đến</option>
+                                    <option value="ha-noi">Từ Hà Nội</option>
+                                    <option value="ho-chi-minh">Từ Hồ Chí Minh</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-7 col-7 border border-0 p-0">
+                                <input type="search" class="form-control rounded-0" id="search"
+                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on">
+                                <datalist id="search-tour">
+                                    <option value="Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội"></option>
+                                    <option value="Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội"></option>
+                                    <option value="Tour Hội An 3 ngày 2 đêm từ Hà Nội"></option>
+                                    <option value="Tour Hội An 2 ngày 1 đêm"></option>
+                                    <option value="Tour du lịch Mai Châu 2 ngày 1 đêm từ Hà Nội"></option>
+                                </datalist>
+                            </div>
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-12 col-12 bg-primary text-center border-0 rounded-end p-0 m-0">
+                                <button type="submit" class="btn text-white">
+                                    <i class="fa-solid fa-magnifying-glass"></i> TÌM TOUR NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container-fluid text-bg-primary">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-lg-12 col">
+                    <h3>
+                        <p class="text-uppercase m-0">Đăng ký tài khoản</p>
+                    </h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a class="text-decoration-none text-warning fw-bold text-uppercase" href="#">Trang chủ</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="text-decoration-none text-white fw-bold text-uppercase" href="#">Đăng ký tài
+                                khoản</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container py-4">
+        <div class="row justify-content-center" ng-controller="FormController">
+            <form class="w-50" name="dangky">
+                <h3>Đăng ký</h3>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example0">Tên người dùng *</label>
+                    <input type="text" id="form2Example0" name="name" class="form-control" ng-model="InputName"
+                        required />
+                    <p>{{dangky.name.$valid}}</p>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example1">Địa chỉ email *</label>
+                    <input type="email" id="form2Example1" name="email" class="form-control" ng-model="InputEmail"
+                        required />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example2">Số điện thoại *</label>
+                    <input type="text" id="form2Example2" name="phone" class="form-control" ng-model="InputPhone"
+                        required />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example3">Mật khẩu *</label>
+                    <input type="password" id="form2Example3" name="password" class="form-control"
+                        ng-model="InputPassword" required />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example4">Nhập lại mật khẩu *</label>
+                    <input type="password" id="form2Example4" name="repassword" class="form-control"
+                        ng-model="InputRepassword" ng-pattern="InputPassword" required />
+                </div>
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form2Example34"
+                                ng-model="agree" checked />
+                            <label class="form-check-label" for="form2Example34">
+                                Đồng ý với các
+                                <a href="#!" class="text-decoration-none">điều khoản</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <table class="table">
+                    <tr>
+                        <th>Thông tin</th>
+                        <th>Kết quả kiểm lỗi</th>
+                    </tr>
+                    <tr>
+                        <td>Họ tên</td>
+                        <!-- CHECK COI FORM HOP LE CHUA -->
+                        <td>{{dangky.name.$valid}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>{{dangky.email.$valid}}</td>
+                    <tr>
+                        <td>Số điện thoại:</td>
+                        <td>{{dangky.phone.$valid}}</td>
+                    </tr>
+                </table>
+                <h4 ng-show="dangky.$valid">Dữ liệu hợp lệ</h4>
+
+                <!-- Submit button -->
+
+                <button type="submit" class="btn btn-warning text-white btn-block mb-4">
+                    Đăng nhập
+                </button>
+
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <!-- Simple link -->
+                        <a href="#!">Quên mật khẩu?</a>
+                    </div>
+                </div>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>Bạn đã là thành viên <a href="#!login">Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>

@@ -37,7 +37,8 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-7 col-7 border border-0 p-0">
                                 <input type="search" class="form-control rounded-0" id="search"
-                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on">
+                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on"
+                                    ng-model="search">
                                 <datalist id="search-tour">
                                     <option value="Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội"></option>
                                     <option value="Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội"></option>
@@ -68,13 +69,57 @@
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                Modal body..
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-12 p-1"
+                                                        ng-repeat="p in products | limitTo: 4 : 0 | filter: search">
+                                                        <div class="card">
+                                                            <img src="img/product/{{p.image}}" class="card-img-top"
+                                                                alt="{{p.name}}">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <h6 class="card-title">
+                                                                            <a class="text-decoration-none text-primary"
+                                                                                href="#!detail/{{p.id}}">
+                                                                                {{p.name}}
+                                                                            </a>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="col-8">
+                                                                        <p class="card-text">
+                                                                            <i class="fa-regular fa-clock"></i>
+                                                                            <span>{{p.schedule}}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <p class="card-text text-end">
+                                                                            <span class="text-primary">{{p.price |
+                                                                                number:0}}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <h4 class="card-text text-end">
+                                                                            <span ng-show="p.sale > 0"
+                                                                                class="text-warning text-uppercase">
+                                                                                {{p.sale | number:0}}
+                                                                            </span>
+                                                                            <span ng-show="p.sale == 0"
+                                                                                class="text-warning text-uppercase">
+                                                                                {{p.price | number:0}}
+                                                                            </span>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <!-- Modal footer -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger"
-                                                    data-bs-dismiss="modal">Close</button>
+                                                    data-bs-dismiss="modal">Hủy</button>
                                             </div>
 
                                         </div>
