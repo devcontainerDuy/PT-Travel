@@ -81,7 +81,7 @@
         </div>
     </section>
     <section class="container py-4">
-        <div class="row justify-content-center" ng-controller="FormController">
+        <div class="row justify-content-center">
             <form class="w-50" name="dangky">
                 <h3>Đăng ký</h3>
                 <!-- Email input -->
@@ -100,7 +100,7 @@
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example2">Số điện thoại *</label>
-                    <input type="text" id="form2Example2" name="phone" class="form-control" ng-model="InputPhone"
+                    <input type="number" id="form2Example2" name="phone" class="form-control" ng-model="InputPhone"
                         required />
                 </div>
 
@@ -132,29 +132,7 @@
                     </div>
                 </div>
 
-
-                <table class="table">
-                    <tr>
-                        <th>Thông tin</th>
-                        <th>Kết quả kiểm lỗi</th>
-                    </tr>
-                    <tr>
-                        <td>Họ tên</td>
-                        <!-- CHECK COI FORM HOP LE CHUA -->
-                        <td>{{dangky.name.$valid}}</td>
-                    </tr>
-                    <tr>
-                        <td>Email:</td>
-                        <td>{{dangky.email.$valid}}</td>
-                    <tr>
-                        <td>Số điện thoại:</td>
-                        <td>{{dangky.phone.$valid}}</td>
-                    </tr>
-                </table>
-                <h4 ng-show="dangky.$valid">Dữ liệu hợp lệ</h4>
-
                 <!-- Submit button -->
-
                 <button type="submit" class="btn btn-warning text-white btn-block mb-4">
                     Đăng nhập
                 </button>
