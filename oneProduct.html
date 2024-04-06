@@ -1,0 +1,534 @@
+<div class="container-fluid bg-secondary-subtle p-0 m-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="breadcrumb m-2">
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none text-dark text-uppercase" href="#">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none text-dark text-uppercase"
+                            href="#">{{detailPro.category[0].name}}</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none text-dark text-uppercase"
+                            href="#">{{detailPro.category[1].name}}</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none text-dark text-uppercase"
+                            href="#">{{detailPro.category[2].name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="container-fluid px-0 pt-2 m-0">
+    <div class="container">
+        <div class="row p-2">
+            <div class="col-lg-9 border-1 border-end">
+                <!-- product-main -->
+                <div class="col-12">
+                    <div class="row">
+                        <!-- Banner img -->
+                        <div class="col-lg-7 col">
+                            <div class="card">
+                                <img class="card-img-top" src="img/product/{{detailPro.image}}" alt="Card image">
+                                <div class="card-body px-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img class="img-fluid" src="img/product/{{detailPro.image}}"
+                                                alt="Card image">
+                                        </div>
+                                        <div class="col">
+                                            <img class="img-fluid opacity-50" src="img/product/{{detailPro.image}}"
+                                                alt="Card image">
+                                        </div>
+                                        <div class="col">
+                                            <img class="img-fluid opacity-50" src="img/product/{{detailPro.image}}"
+                                                alt="Card image">
+                                        </div>
+                                        <div class="col">
+                                            <img class="img-fluid opacity-50" src="img/product/{{detailPro.image}}"
+                                                alt="Card image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Banner img -->
+                        <!-- Info -->
+                        <div class="col-lg-5 col">
+                            <h2 class="pt-2">
+                                {{detailPro.name}}
+                            </h2>
+                            <div class="col-12 fw-bold">
+                                <p>Giá tour trọn gói</p>
+                                <div class="d-flex">
+                                    <p class="text-info fs-5 fw-bold">{{detailPro.price}}</p>
+                                    <div class="mx-2">
+                                        <h3 class="text-warning fw-bold">{{detailPro.sale}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p>
+                                            <i class="fa-solid fa-map-location-dot"></i>
+                                            Xuất phát từ:
+                                            <strong>{{detailPro.from}}</strong>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-flag-checkered"></i>
+                                            Khởi hành:
+                                            <strong></strong>
+                                        </p>
+                                        <p>
+                                            <i class="fa-regular fa-clock"></i>
+                                            Lịch trình:
+                                            <strong>{{detailPro.schedule}}</strong>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-truck-plane"></i>
+                                            Vận chuyển:
+                                            <strong>{{detailPro.transport}}</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 pt-2 border-bottom">
+                                <form class="my-3" action="#">
+                                    <button class="btn btn-primary w-100" type="button">ĐẶT TOUR</button>
+                                </form>
+                            </div>
+                            <div class="col-12">
+                                <span class="fs-6">
+                                    Danh mục :
+                                    <a ng-repeat="cate in detailPro.category" class="text-decoration-none" href="#"
+                                        rel="tag">
+                                        {{cate.name}}
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="col-12">
+                                <a href="#" class="text-decoration-none border border-1 border-primary rounded-1 m-1">
+                                    <i class="fa-brands fa-facebook m-1"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none border border-1 border-primary rounded-1 m-1">
+                                    <i class="fa-brands fa-twitter m-1"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none border border-1 border-primary rounded-1 m-1">
+                                    <i class="fa-regular fa-envelope m-1"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none border border-1 border-primary rounded-1 m-1">
+                                    <i class="fa-brands fa-pinterest m-1"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none border border-1 border-primary rounded-1 m-1">
+                                    <i class="fa-brands fa-linkedin-in m-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Info -->
+                    </div>
+                </div>
+                <!-- end product-main -->
+                <!-- product-footer -->
+                <div class="col-12">
+                    <div class="row">
+                        <div class="d-flex">
+                            <span class="text-primary fw-bold fs-5 pt-2 pe-5">Giới thiệu</span>
+                            <span class="text-primary fw-bold fs-5 pt-2 pe-5">Lịch trình</span>
+                            <span class="text-primary fw-bold fs-5 pt-2 pe-5">Bao gồm và điều khoản</span>
+                            <span class="text-primary fw-bold fs-5 pt-2 pe-5">Đánh giá & Bình luận</span>
+                        </div>
+                    </div>
+                    <div class="row py-4">
+                        <div class="col-12">
+                            <h4 class="text-warning border-1 border-bottom">
+                                <span>Giới thiệu</span>
+                            </h4>
+                        </div>
+                        <div class="col-12">
+                            <p class="py-1">
+                                Nếu bạn đang tìm kiếm <strong>tour Đà Nẵng Hội An 4 ngày 3 đêm</strong> thì
+                                hãy tham khảo
+                                ngay tour dưới đây của <strong>PT Travel</strong> . Bài viết sẽ cung cấp cho bạn đầy
+                                đủ các thông tin
+                                cần thiết như giá tour, lịch trình tham quan, các dịch vụ trong tour, điều khoản
+                                quan trọng,… Cùng theo dõi ngay!
+                            </p>
+                            <h3 class="text-primary text-uppercase pb-2">
+                                Giới thiệu về {{detailPro.name}}
+                            </h3>
+                            <p>
+                                Du lịch Đà Nẵng Hội An 4 ngày 3 đêm do PT Travel tổ chức sẽ đưa du khách khám phá
+                                nhiều địa điểm du lịch tại Đà Nẵng và Hội An, đặc biệt là Bà Nà Hills và phố cổ. Với
+                                cảnh sắc mối nơi có một điểm riêng biệt, sẽ cho bạn thật nhiều trải nghiệm đáng nhớ.
+                            </p>
+                            <p>
+                                <span>
+                                    Thông tin cơ bản về Đà Nẵng Hội An 4 ngày 3 đêm:
+                                </span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Hành trình :</strong>
+                                    <span> Hà Nội - Đà Nẵng - Hội An - Hà Nội</span>
+                                </li>
+                                <li>
+                                    <strong>Thời gian:</strong>
+                                    <span> 4 Ngày 3 Đêm</span>
+                                </li>
+                                <li>
+                                    <strong>Điểm xuất phát/Kết thúc:</strong>
+                                    <span> Hà Nội</span>
+                                </li>
+                                <li>
+                                    <strong>Phương tiện:</strong>
+                                    <span> Máy bay + Ô tô</span>
+                                </li>
+                            </ul>
+                            <figure>
+                                <img src="img/product/check-in-vuon-hoa-ba-na-hills-500x313.jpg" class="w-100 img-fluid"
+                                    alt="post">
+                            </figure>
+                            <figcaption class="text-center">Check in vườn hoa Bà Nà hills</figcaption>
+                            <h3 class="text-primary text-uppercase pt-4 pb-2">
+                                Điểm nổi bật của du lịch Đà Nẵng Hội An 4 ngày 3 đêm
+                            </h3>
+                            <ul>
+                                <li>Tham quan, khám phá thành phố Đà Nẵng nơi có du lịch vô cùng phát triển</li>
+                                <li>
+                                    Đến tham quan Bà Nà Hills - nơi được xây dựng lên như một thành phố của Pháp thu
+                                    nhỏ
+                                </li>
+                                <li>
+                                    Du lịch tại Hội An với nhiều địa điểm nổi tiếng như phố cổ, rừng dừa Bảy Mẫu,
+                                    làng gốm Thanh Hà
+                                </li>
+                                <li>
+                                    Có hướng dẫn viên đồng hành trong suốt hành trình tham quan Đà Nẵng - Hội An
+                                </li>
+                                <li>Thưởng thức các món ăn ngon đặc sản của miền Trung</li>
+                            </ul>
+                            <h3 class="text-primary text-uppercase pb-2">
+                                Giá tour Đà Nẵng - Hội An 4N3Đ từ Hà Nội
+                            </h3>
+                            <p>
+                                Bảng giá tour du lịch Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội tại PT Travel:
+                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Đối tượng</th>
+                                        <th>Giá tour</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Giá tour người lớn</td>
+                                        <td>5.090.000 VNĐ/người</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Giá tour trẻ em từ 5 đến 9 tuổi</td>
+                                        <td>
+                                            3.820.000 VNĐ/người
+                                            <br>
+                                            Bằng 75% giá tour của người lớn
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Giá tour trẻ em dưới 5 tuổi</td>
+                                        <td>Miễn phí</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <strong class="fs-5">Lưu ý:</strong>
+                            <ul>
+                                <li>
+                                    <span class="text-danger">
+                                        Giá tour chưa bao gồm vé máy bay, khi bạn đặt tour và có ngày di chuyển sẽ
+                                        được
+                                        thông báo về giá tour chính xác
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="text-danger">
+                                        Giá tour bao gồm đoàn từ 10 người trở lên, đoàn dưới 10 người nếu muốn đi
+                                        tour
+                                        riêng có thể liên hệ để được tư vấn
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="text-warning border-1 border-bottom">
+                                <span>Bao gồm và điều khoản</span>
+                            </h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="border-1 border-bottom">
+                                <h3 class="text-primary text-uppercase pb-2">
+                                    GIÁ TOUR BAO GỒM
+                                </h3>
+                                <ul>
+                                    <li>Xe ô tô đón tiễn sân bay, xe theo đoàn tham quan tại Đà Lạt</li>
+                                    <li>Khách sạn 3 sao tiêu chuẩn 2 khách/ phòng, lẻ ghép 3</li>
+                                    <li>Bữa ăn: 03 bữa sáng theo tiêu chuẩn khách sạn, Ăn chính 06 bữa thực đơn
+                                        180.000đ/suất, 1 bữa buffet Bà Nà Hills giá 310.000 vnđ</li>
+                                    <li>Vé tham quan: tại các điểm theo chương trình.</li>
+                                    <li>HDV Tiếng Việt phục vụ nhiệt tình chu đáo</li>
+                                    <li>Khuyến mại: Nước uống Sanna, thuốc chống say.</li>
+                                    <li>Bảo hiểm: 60.000.000 VND/vụ</li>
+                                </ul>
+                                <h3 class="text-primary text-uppercase pb-2">
+                                    GIÁ TOUR KHÔNG BAO GỒM
+                                </h3>
+                                <ul>
+                                    <li>Vé máy bay khứ hồi Hà Nội - Đà Lạt</li>
+                                    <li>Thuế VAT</li>
+                                    <li>Vé xem show ký ức Hội An </li>
+                                    <li>Vé ngồi thuyền tại Rừng dừa Bảy Mẫu</li>
+                                    <li>Tiền Tip cho HDV và tài xế địa phương</li>
+                                    <li>Chi phí cá nhân,điện thoại ,giặt ủi,nước uống tại khách sạn…</li>
+                                </ul>
+                                <h3 class="text-primary text-uppercase pb-2">
+                                    GIÁ TOUR TRẺ EM
+                                </h3>
+                                <ul>
+                                    <li>Trẻ em từ 10 tuổi trở lên tính 100% giá tour người lớn </li>
+                                    <li>Trẻ em từ 5 - đến dưới 10 tuổi mua 75% giá tour, ngủ chung phòng với bố mẹ
+                                    </li>
+                                    <li>Trẻ em dưới 5 tuổi miễn phí, nếu trẻ em đi kèm nhiều hơn thì từ em thứ 02
+                                        trở
+                                        lên phải mua 1/2 vé</li>
+                                </ul>
+                                <p>
+                                    Trên đây là tất cả các thông tin về tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội.
+                                    Nếu
+                                    bạn muốn đăng ký tour hay liên hệ ngay đến PT Travel nhé!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-4">
+                        <div class="col-lg-12">
+                            <h4 class="text-warning text-uppercase">Đánh giá</h4>
+                            <p>
+                                Chưa có đánh giá nào
+                            </p>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="container border border-2 border-warning rounded">
+                                <div class="row p-3 g-3">
+                                    <h4 class="text-primary text-uppercase">
+                                        HÃY LÀ NGƯỜI ĐẦU TIÊN NHẬN XÉT “TOUR ĐÀ NẴNG HỘI AN 4 NGÀY 3 ĐÊM TỪ HÀ NỘI
+                                        GIÁ TỐT”
+                                    </h4>
+                                    <form action="#">
+                                        <div class="form-group py-1">
+                                            <label for="star">Đánh giá của bạn <strong>*</strong></label>
+                                            <ul class="list-unstyled list-inline my-2 text-warning">
+                                                <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
+                                                <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
+                                                <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
+                                                <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
+                                                <li class="list-inline-item mx-0">
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-group py-1">
+                                            <label for="comment">Nhận xét của bạn <strong>*</strong></label>
+                                            <textarea class="form-control pt-2" id="comment" name="comment" cols="45"
+                                                rows="8"></textarea>
+                                        </div>
+                                        <div class="row g-3 py-1">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputName4" class="form-label">
+                                                    Tên <strong>*</strong></label>
+                                                <input type="text" class="form-control" id="inputName4" name="name">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="form-label">
+                                                    Email <strong>*</strong>
+                                                </label>
+                                                <input type="email" class="form-control" id="inputEmail4" name="email">
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                    <label class="form-check-label" for="gridCheck">
+                                                        <strong> Lưu tên của tôi, email, và trang web trong trình
+                                                            duyệt này cho lần bình luận kế tiếp của tôi.</strong>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 py-2">
+                                            <input type="submit" class="btn btn-warning" value="Gửi đi">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end product-footer -->
+            </div>
+            <div class="col-lg-3">
+                <aside class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col p-0">
+                            <div class="border-start border-4 border-warning">
+                                <h5 class="text-center text-primary m-auto">
+                                    <span>Gọi ngay để được tư vấn</span>
+                                </h5>
+                            </div>
+                            <div class="col text-center py-2">
+                                <div class="py-1">
+                                    <div class="btn btn-warning rounded-pill w-100">
+                                        <a class="text-decoration-none text-white m-5" href="tel:0826151515">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>0826 15 15 15</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="py-1">
+                                    <div class="btn btn-info rounded-pill w-100">
+                                        <a class="text-decoration-none text-white m-5" href="tel:0826151515">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <span>0826 15 15 15</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col">
+                            <div class="row">
+                                <div class="col-12 p-0 m-0 py-1">
+                                    <div class="card border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="img/post/Trai-nghiem-truot-thac-Hoa-Phu-Thanh.jpg"
+                                                    class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body p-0">
+
+                                                    <a href="#" class="text-decoration-none text-dark">
+                                                        <p>Khám phá khu du lịch Hoà Phú Thành Đà Nẵng </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-0 m-0 py-1">
+                                    <div class="card border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="img/post/Nha-nghi-Thanh-Tay.jpg"
+                                                    class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body p-0">
+
+                                                    <a href="#" class="text-decoration-none text-dark">
+                                                        <p>Tổng hợp 10+ nhà nghỉ tại Hội An giá rẻ từ 250k/đêm
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-0 m-0 py-1">
+                                    <div class="card border-0">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img src="img/post/Cua-Dai-Beach.jpg" class="img-fluid rounded-start"
+                                                    alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body p-0">
+
+                                                    <a href="#" class="text-decoration-none text-dark">
+                                                        <p>Danh sách 13 khách sạn giá rẻ tại Hội An chỉ 250k/đêm
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col px-0 pt-5">
+                            <div class="container p-0">
+                                <div class="border-start border-4 border-warning">
+                                    <h5 class="text-center text-primary m-auto">
+                                        <span>Gọi ngay để được tư vấn</span>
+                                    </h5>
+                                </div>
+                                <div class="col text-center py-2">
+                                    <div class="py-1">
+                                        <form class="w-100">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Số điện thoại của bạn"
+                                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                <button class="btn btn-warning text-white" type="button"
+                                                    id="button-addon2">Gửi</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <p>PTTravel sẽ liên hệ với bạn!</p>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img class="img-fluid" src="{{detailPro.image}}" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <p>
+                                                {{detailPro.name}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card mb-3 border-1 rounded">
+                                                <div class="card-body d-flex align-items-center">
+                                                    <p class="card-text mb-0">
+                                                        <i class="fa-regular fa-clock"></i>
+                                                        Lịch trình: {{detailPro.schedule}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="#" class="btn btn-warning text-white w-100">
+                                                <span>Đặt tour ngay</span>
+                                                <br>
+                                                <span class="ms-2">(Giữ chỗ, chưa cần thanh toán)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>

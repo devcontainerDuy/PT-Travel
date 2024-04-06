@@ -1,0 +1,342 @@
+<main class="container-fluid p-0 m-0">
+    <nav class="card border-0">
+        <div class=""
+            style="filter: brightness(0.7);background-image: url(img/banner-cat-2.jpg); background-position: 50% 50%; background-repeat: no-repeat !important; background-size: cover !important; width: 100%; height: 620px;">
+        </div>
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+            <div class="container">
+                <div class="row w-100">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="card-body text-center text-white">
+                                        <h4 class="card-title text-uppercase fw-bold">Du lịch giải sầu - quên hết âu
+                                            lo</h4>
+                                        <div class="card-text fw-bold">
+                                            <p>Nhanh tay tìm kiếm Tour và đặt Tour tại PT Travel để nhận được nhiều
+                                                ưu đãi!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-auto justify-content-center" style="max-width:680px">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-5 col-5 bg-white border border-1 rounded-start p-0 m-0">
+                                <select class="form-select border-0" id="sel1" name="sellist1">
+                                    <option value="">Chọn điểm đến</option>
+                                    <option value="ha-noi">Từ Hà Nội</option>
+                                    <option value="ho-chi-minh">Từ Hồ Chí Minh</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-7 col-7 border border-0 p-0">
+                                <input type="search" class="form-control rounded-0" id="search"
+                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on">
+                                <datalist id="search-tour">
+                                    <option value="Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội"></option>
+                                    <option value="Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội"></option>
+                                    <option value="Tour Hội An 3 ngày 2 đêm từ Hà Nội"></option>
+                                    <option value="Tour Hội An 2 ngày 1 đêm"></option>
+                                    <option value="Tour du lịch Mai Châu 2 ngày 1 đêm từ Hà Nội"></option>
+                                </datalist>
+                            </div>
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-12 col-12 bg-primary text-center border-0 rounded-end p-0 m-0">
+                                <button type="submit" class="btn text-white">
+                                    <i class="fa-solid fa-magnifying-glass"></i> TÌM TOUR NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container-fluid text-bg-primary">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-lg-12 col">
+                    <h3>
+                        <p class="text-uppercase m-0">Du lịch nước ngoài</p>
+                    </h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a class="text-decoration-none text-warning fw-bold text-uppercase" href="#">Trang chủ</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="text-decoration-none text-white fw-bold text-uppercase" href="#">
+                                Du lịch nước ngoài
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-4">
+        <div class="row">
+            <div class="col-lg-9 col-12">
+                <h3>Danh sách các Tour Du lịch nước ngoài</h3>
+                <div class="container bg-secondary-subtle">
+                    <ul class="list-unstyled d-flex flex-wrap py-3">
+                        <li class="fw-bold my-auto">Sắp xếp theo:</li>
+                        <li class="ms-3">
+                            <a class="text-decoration-none btn btn-warning text-white" href="" ng-click="moiNhat()">
+                                Mới nhất
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-decoration-none btn btn-warning text-white" href="" ng-click="tangdan()">
+                                Giá tăng dần
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-decoration-none btn btn-warning text-white" href="" ng-click="giamdan()">
+                                Giá giảm dần
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="text-decoration-none btn btn-warning text-white" href="">
+                                Theo đánh giá
+                            </a>
+                        </li>
+                        <li class="ms-3" ng-hide="orderByAll == 'id'">
+                            <a class="text-decoration-none btn btn-secondary text-white" href="" ng-click="huybo()">
+                                Hủy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 ps-2">
+                            <!-- Start Card -->
+                            <div class="row">
+                                <div class="col-md-4 col-6 p-1"
+                                    ng-repeat="p in products | limitTo: limitToAll : 0 | orderBy: orderByAll">
+                                    <div class="card">
+                                        <img src="img/product/{{p.image}}" class="card-img-top" alt="{{p.name}}">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h6 class="card-title">
+                                                        <a class="text-decoration-none text-primary"
+                                                            href="#!detail/{{p.id}}">
+                                                            {{p.name}}
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p class="card-text">
+                                                        <i class="fa-regular fa-clock"></i>
+                                                        <span>{{p.schedule}}</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="card-text text-end">
+                                                        <span class="text-primary">{{p.price | number:0}}</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <h4 class="card-text text-end">
+                                                        <span ng-show="p.sale > 0" class="text-warning text-uppercase">
+                                                            {{p.sale | number:0}}
+                                                        </span>
+                                                        <span ng-show="p.sale == 0" class="text-warning text-uppercase">
+                                                            {{p.price | number:0}}
+                                                        </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Card -->
+                        </div>
+                        <div class="col-12 pt-2">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link active" href="#" ng-click="page1()">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#" ng-click="page2()">2</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-lg-3 d-lg-block d-none">
+                <div class="row">
+                    <div class="col-12 px-0 border-1 border-bottom border-primary">
+                        <span class="text-primary fs-5 fw-bold text-uppercase">Lọc Tour theo</span>
+                    </div>
+                    <div class="col-12 px-0">
+                        <div class="col p-2 text-primary">
+                            <h6 class="text-secondary fw-bold">Khởi hành từ:</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hn">
+                                <label class="form-check-label" for="hn">
+                                    Hà Nội
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hcm">
+                                <label class="form-check-label" for="hcm">
+                                    Hồ Chí Minh
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col p-2 text-primary">
+                            <h6 class="text-secondary fw-bold">Lịch trình:</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="2n1d">
+                                <label class="form-check-label" for="2n1d">
+                                    2 ngày 1 đêm
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="3n2d">
+                                <label class="form-check-label" for="3n2d">
+                                    3 ngày 2 đêm
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="4n3d">
+                                <label class="form-check-label" for="4n3d">
+                                    4 ngày 3 đêm
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="5n4d">
+                                <label class="form-check-label" for="5n4d">
+                                    5 ngày 4 đêm
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="6n5d">
+                                <label class="form-check-label" for="6n5d">
+                                    6 ngày 5 đêm
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col p-2 text-primary">
+                            <h6 class="text-secondary fw-bold">Mức giá:</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hn">
+                                <label class="form-check-label" for="hn">
+                                    10 triệu - 12 triệu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hcm">
+                                <label class="form-check-label" for="hcm">
+                                    12 triệu - 15 triệu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hcm">
+                                <label class="form-check-label" for="hcm">
+                                    2 triệu - 3 triệu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hcm">
+                                <label class="form-check-label" for="hcm">
+                                    5 triệu - 7 triệu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="hcm">
+                                <label class="form-check-label" for="hcm">
+                                    7 triệu - 10 triệu
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 px-0 border-1 border-bottom border-primary">
+                        <span class="text-primary fs-5 fw-bold text-uppercase">Tin nổi bật</span>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 p-0 m-0 py-1">
+                                <div class="card border-0">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="img/post/Trai-nghiem-truot-thac-Hoa-Phu-Thanh.jpg"
+                                                class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-0">
+
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <p>Khám phá khu du lịch Hoà Phú Thành Đà Nẵng </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 m-0 py-1">
+                                <div class="card border-0">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="img/post/Nha-nghi-Thanh-Tay.jpg" class="img-fluid rounded-start"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-0">
+
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <p>Tổng hợp 10+ nhà nghỉ tại Hội An giá rẻ từ 250k/đêm
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 m-0 py-1">
+                                <div class="card border-0">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="img/post/Cua-Dai-Beach.jpg" class="img-fluid rounded-start"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-0">
+
+                                                <a href="#" class="text-decoration-none text-dark">
+                                                    <p>Danh sách 13 khách sạn giá rẻ tại Hội An chỉ 250k/đêm
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+</main>

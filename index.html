@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ - PT Travel</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <!-- Icon FontAwesome v6.4.2 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+    <!-- CSS Boostrap 5 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- JavaScript Boostrap 5 -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- AngularJS Route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- jQuery v3.7.0 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <div ng-include="'header.html'"></div>
+    <div ng-view></div>
+    <div ng-include="'footer.html'"></div>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", { templateUrl: "main.html", controller: "myCtrl" })
+                .when("/detail/:id", { templateUrl: "oneProduct.html", controller: "myCtrl" })
+                .when("/du-lich-nuoc-ngoai", { templateUrl: "tour-nuoc-ngoai.html", controller: "myCtrl" })
+                .when("/login", { templateUrl: "login.html", controller: "myCtrl" })
+                .when("/register", { templateUrl: "register.html", controller: "myCtrl" })
+                .otherwise({ templateUrl: "index.html", controller: "myCtrl" })
+        })
+        app.controller("myCtrl", function ($scope, $rootScope, $routeParams, $http) {
+            //Khai báo 1 mảng products rỗng 
+            $scope.products = [];
+
+            //Đọc dữ liệu từ json server rồi đổ mảng vào trong products    
+            $http.get("http://localhost:3000/products")
+                .then(function (reponse) {
+                    $scope.products = reponse.data;
+                    console.log($scope.products);
+                    // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
+                    $scope.detailPro = $scope.products.find(item => item.id == $routeParams.id);
+                })
+            // .catch(function (error) {
+            //     // Xử lý lỗi nếu yêu cầu không thành công
+            //     console.error("Error fetching data:", error);
+            // });
+
+            // Lọc sản phẩm theo from: Hà Nội
+            $http.get("http://localhost:3000/products?from=H%C3%A0%20N%E1%BB%99i")
+                .then(function (reponse) {
+                    $scope.products = reponse.data;
+                    console.log($scope.products);
+                    // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
+                    $scope.fromHaNoi = $scope.products.find(item => item.id == $routeParams.id);
+                })
+
+            $scope.limitToShow = 4;
+            $scope.loadMore = function () {
+                $scope.limitToShow += 4;
+            };
+            $scope.loadDete = function () {
+                $scope.limitToShow = 4;
+            }
+
+            // All tour
+            $scope.limitToAll = 9;
+            $scope.orderByAll = 'id';
+            $scope.limitPrice = 'price';
+
+            $scope.moiNhat = function () {
+                $scope.orderByAll = '-id';
+            }
+            $scope.tangdan = function () {
+                $scope.orderByAll = 'price';
+            }
+            $scope.giamdan = function () {
+                $scope.orderByAll = '-price';
+            }
+            $scope.huybo = function () {
+                $scope.orderByAll = 'id';
+            }
+
+        });
+    </script>
+    <!-- <script src="js/script.js"></script> -->
+</body>
+
+</html>

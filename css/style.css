@@ -1,0 +1,17 @@
+@media screen and (max-width: 576px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 2) !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 3) !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 4) !important;
+    }
+}

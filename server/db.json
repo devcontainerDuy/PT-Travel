@@ -1,0 +1,388 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội giá tốt",
+            "image": "tour-da-nang-hoi-an-4-ngay-3-dem-800x800.jpg",
+            "price": 5550000,
+            "sale": 5090000,
+            "from": "Hà Nội",
+            "schedule": "4 ngày 3 đêm",
+            "transport": "Máy Bay, Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền trung"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Đà Nẵng"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội giá tốt",
+            "image": "tour-da-nang-hoi-an-3-ngay-2-dem-800x800.jpg",
+            "price": 3590000,
+            "sale": 3390000,
+            "from": "Hà Nội",
+            "schedule": "3 ngày 2 đêm",
+            "transport": "Máy Bay, Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền trung"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Đà Nẵng"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Du xuân Hà Nội - Yên Tử - Cửa Ông - Côn Sơn - Kiếp Bạc 2 ngày 1 đêm",
+            "image": "Du-xuan-Ha-Noi-Yen-Tu-Cua-Ong-Con-Son-Kiep-Bac-2-ngay-1-dem-800x800.jpg",
+            "price": 1750000,
+            "sale": 1420000,
+            "from": "Hà Nội",
+            "schedule": "2 ngày 1 đêm",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Tour Lễ Hội"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Du xuân Hà Nội - đền Bà Chúa Kho - Chùa Dâu - Chùa Bút Tháp",
+            "image": "Tour-den-Ba-Chua-Kho-Chua-Dau-Chua-But-Thap-1-ngay_-800x800.jpg",
+            "price": 645000,
+            "sale": 510000,
+            "from": "Hà Nội",
+            "schedule": "1 ngày",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Tour Lễ Hội"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Tour Hà Nội - Phủ Giầy - Đền Trần 2 ngày từ A-Z tại PT Travel",
+            "image": "Tour-du-lich-Ha-Noi-Phu-Giay-Den-Tran-1-ngay-800x800.jpg",
+            "price": 735000,
+            "sale": 535000,
+            "from": "Hà Nội",
+            "schedule": "1 ngày",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Tour Lễ Hội"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Tour Đền Hùng 1 ngày giá rẻ [510K] | Tour lễ hội PT Travel ",
+            "image": "du-lich-Ha-Noi-Den-Hung-1-ngay-800x800.jpg",
+            "price": 725000,
+            "sale": 645000,
+            "from": "Hà Nội",
+            "schedule": "1 ngày",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Tour Lễ Hội"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Tour Trung Quốc 3 ngày 2 đêm trọn gói combo từ A-Z | PT Travel",
+            "image": "Tour-Trung-Quoc-3-ngay-2-dem-gia-re-800x800.jpg",
+            "price": 5490000,
+            "sale": 3480000,
+            "from": "Hà Nội, Hồ Chí Minh",
+            "schedule": "3 ngày 2 đém",
+            "transport": "Máy Bay, Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch nước ngoài"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch Trung Quốc"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Trải nghiệm tour du lịch Đông Bắc 4 ngày 3 đêm PT Travel",
+            "image": "tour-Dong-Bac-4-ngay-3-dem-PT-Travel-to-chuc-800x800.jpg",
+            "price": 5500000,
+            "sale": 4980000,
+            "from": "Hà Nội",
+            "schedule": "4 ngày 3 đêm",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Hà Giang"
+                },
+                {
+                    "id": 4,
+                    "name": "Du lịch Cao Bằng"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Tour Hội An 3 ngày 2 đêm từ Hà Nội giá SỐC",
+            "image": "tour-hoi-an-3-ngay-2-dem-800x800.jpg",
+            "price": 3090000,
+            "sale": 0,
+            "from": "Hà Nội",
+            "schedule": "3 ngày 2 đêm",
+            "transport": "Máy Bay, Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền trung"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Hội An"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Tour Hội An 2 ngày 1 đêm giá rẻ chỉ từ 2.090K",
+            "image": "tour-hoi-an-2-ngay-1-dem-800x800.jpg",
+            "price": 2090000,
+            "sale": 0,
+            "from": "Hà Nội",
+            "schedule": "2 ngày 1 đêm",
+            "transport": "Máy Bay, Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền trung"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Hội An"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Tour du lịch Mai Châu 2 ngày 1 đêm từ Hà Nội",
+            "image": "tour-mai-chau-3-ngay-2-dem-800x800.jpg",
+            "price": 1500000,
+            "sale": 0,
+            "from": "Hà Nội",
+            "schedule": "2 ngày 1 đêm",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Mai Châu"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Tour Mai Châu 3 ngày 2 đêm từ Hà Nội giá chỉ 2.490K",
+            "image": "tour-mai-chau-3-ngay-2-dem-800x800.jpg",
+            "price": 2490000,
+            "sale": 0,
+            "from": "Hà Nội",
+            "schedule": "3 ngày 2 đêm",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền bắc"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Mai Châu"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Du lịch Phan Thiết Đà Lạt 5 ngày 4 đêm giá ƯU ĐÃI 2024",
+            "image": "Tour-phan-thiet-da-lat-5-ngay-4-dem-800x800.jpg",
+            "price": 5450000,
+            "sale": 0,
+            "from": "Hồ Chí Minh",
+            "schedule": "5 ngày 4 đêm",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền trung"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Đà Lạt"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Tour du lịch Nha Trang Đà Lạt 5 ngày 4 đêm tại PT Travel",
+            "image": "Tour-du-lich-Nha-Trang-Da-Lat-5-ngay-4-dem-PT-Travel-800x800.jpg",
+            "price": 5000000,
+            "sale": 0,
+            "from": "Nha Trang - Đà Lạt",
+            "schedule": "5 ngày 4 đêm",
+            "transport": "Ô Tô",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch trong nước"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch miền trung"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Đà Lạt"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Du lịch Trung Quốc [Đại Lý - Lệ Giang - Shangrila] 6N5Đ",
+            "image": "Du-lich-Trung-Quoc-6N5D-800x800.jpg",
+            "price": 19490000,
+            "sale": 0,
+            "from": "Hà Nội",
+            "schedule": "6 ngày 5 đêm",
+            "transport": "Máy Bay",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch nước ngoài"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch Châu Á"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Trung Quốc"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Tour du lịch Bali 5 ngày 4 đêm từ Hà Nội 2023",
+            "image": "tour-bali-5n4d-500x500.jpg",
+            "price": 17900000,
+            "sale": 10500000,
+            "from": "Hà Nội",
+            "schedule": "5 ngày 4 đêm",
+            "transport": "Máy Bay",
+            "category": [
+                {
+                    "id": 1,
+                    "name": "Du lịch nước ngoài"
+                },
+                {
+                    "id": 2,
+                    "name": "Du lịch Châu Á"
+                },
+                {
+                    "id": 3,
+                    "name": "Du lịch Bali"
+                }
+            ]
+        }
+    ]
+}

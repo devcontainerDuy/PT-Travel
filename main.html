@@ -1,0 +1,460 @@
+<main class="container-fluid p-0 m-0">
+    <nav class="card border-0">
+        <div class=""
+            style="filter: brightness(0.7);background-image: url(img/slider-5.jpg); background-position: 50% 50%; background-repeat: no-repeat !important; background-size: cover !important; width: 100%; height: 620px;">
+        </div>
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+            <div class="container">
+                <div class="row w-100">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="card-body text-center text-white">
+                                        <h4 class="card-title text-uppercase fw-bold">Du lịch giải sầu - quên hết âu
+                                            lo</h4>
+                                        <div class="card-text fw-bold">
+                                            <p>Nhanh tay tìm kiếm Tour và đặt Tour tại PT Travel để nhận được nhiều
+                                                ưu đãi!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-auto justify-content-center" style="max-width:680px">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-5 col-5 bg-white border border-1 rounded-start p-0 m-0">
+                                <select class="form-select border-0" id="sel1" name="sellist1">
+                                    <option value="">Chọn điểm đến</option>
+                                    <option value="ha-noi">Từ Hà Nội</option>
+                                    <option value="ho-chi-minh">Từ Hồ Chí Minh</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-7 col-7 border border-0 p-0">
+                                <input type="search" class="form-control rounded-0" id="search"
+                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on">
+                                <datalist id="search-tour">
+                                    <option value="Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội"></option>
+                                    <option value="Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội"></option>
+                                    <option value="Tour Hội An 3 ngày 2 đêm từ Hà Nội"></option>
+                                    <option value="Tour Hội An 2 ngày 1 đêm"></option>
+                                    <option value="Tour du lịch Mai Châu 2 ngày 1 đêm từ Hà Nội"></option>
+                                </datalist>
+                            </div>
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-12 col-12 bg-primary text-center border-0 rounded-end p-0 m-0">
+                                <button type="submit" class="btn text-white">
+                                    <i class="fa-solid fa-magnifying-glass"></i> TÌM TOUR NGAY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Start Banner -->
+    <section class="container pt-3 pb-3 border-bottom">
+        <div class="row">
+            <div class="col-sm-5 col-12 d-md-flex border-1 border-warning border-end">
+                <div class="col-sm-3 text-center text-left">
+                    <img src="img/12-nam.png" class="img-fluid" alt="12nam">
+                </div>
+                <div class="col-sm-10 m-auto text-warning">
+                    <h5 class="text-center fw-bold">12 năm chặng đường</h5>
+                    <h4 class="text-uppercase fw-bold text-center">Chinh phục mọi niềm tin</h4>
+                </div>
+            </div>
+            <div class="col-sm-7 col-12">
+                <div class="row">
+                    <div class="col-sm-4 col-12">
+                        <div class="text-center">
+                            <img src="img/luon-co-gia-tot-2.png" class="img-fluid" alt="1nam">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <p class="text-warning fw-bold">Luôn có giá tốt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-12">
+                        <div class="text-center">
+                            <img src="img/cong-ty-du-lich-hang-dau-2.png" class="img-fluid" alt="2nam">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <p class="text-warning fw-bold">Luôn có giá tốt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-12">
+                        <div class="text-center">
+                            <img src="img/99-hai-long-2.png" class="img-fluid" alt="3nam">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <p class="text-warning fw-bold">Luôn có giá tốt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner -->
+
+    <!-- Start Product -->
+    <section class="container pt-3">
+        <div class="row">
+            <div class="col-sm-12 p-0 m-0">
+                <div class="d-flex pb-3">
+                    <div class="col-4 border-2 border-bottom border-primary">
+                        <h4 class="text-uppercase fw-bold text-primary fs-3">Tour khuyến mãi</h4>
+                    </div>
+                    <div class="col-8 border-2 border-bottom border-warning">
+                        <h5 class="fw-bold text-end align-text-bottom">
+                            <a href="" class="m-auto text-decoration-none text-secondary" ng-show="limitToShow >= 8"
+                                ng-click="loadDete()">
+                                Thu gọn
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                            <a href="" class="m-auto text-decoration-none text-secondary" ng-click="loadMore()">
+                                Xem tất cả
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 px-0 m-0">
+                <!-- Start Card -->
+                <div class="row p-2">
+                    <div class="col-lg-3 col-md-4 col-6 p-1"
+                        ng-repeat="p in products | limitTo: limitToShow : 0 | orderBy: 'id'">
+                        <div class="card">
+                            <img src="img/product/{{p.image}}" class="card-img-top" alt="{{p.name}}">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="card-title">
+                                            <a class="text-decoration-none text-primary" href="#!detail/{{p.id}}">
+                                                {{p.name}}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="card-text">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span>{{p.schedule}}</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="card-text text-end">
+                                            <span class="text-primary">{{p.price | number:0}}</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-12">
+                                        <h4 class="card-text text-end">
+                                            <span ng-show="p.sale > 0" class="text-warning text-uppercase">
+                                                {{p.sale | number:0}}
+                                            </span>
+                                            <span ng-show="p.sale == 0" class="text-warning text-uppercase">
+                                                {{p.price | number:0}}
+                                            </span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Card -->
+            </div>
+        </div>
+    </section>
+    <!-- End product -->
+
+    <!-- Poster News -->
+    <section class="container pt-3">
+        <div class="row">
+            <div class="col-md-6 col-12 pe-2 p-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 border-2 border-bottom border-dark p-0">
+                            <h5 class="fw-bold text-uppercase">
+                                Cẩm nang du lịch quốc tế
+                            </h5>
+                        </div>
+                        <div class="col-6 border-2 border-bottom border-secondary p-0">
+                            <p class="text-end text-secondary fw-bold">
+                                Xem thêm
+                                <i class="fa-solid fa-angle-right"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card border-0 pt-3 ">
+                        <div class="border-bottom border-secondary">
+                            <img class="card-img-top" src="img/post/Khung-canh-duoc-nhin-tu-ngon-doi-Laozhai.jpg"
+                                alt="Card image">
+                            <div class="card-body p-2">
+                                <div class="card-title pt-2">
+                                    <a href="#" class="text-decoration-none fs-6">
+                                        <h5>Chiêm ngưỡng chốn thần tiên Quế Lâm Trung Quốc từ A-Z</h5>
+                                    </a>
+                                </div>
+                                <div class="card-text pt-2">
+                                    <p class="text-dark text-start mb-0">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        11/14/2023
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-lg-4 col-sm-12">
+                        <img class="card-img-top" src="img/post/Nui-non-vuon-quoc-gia-Truong-Gia-Gioi.jpg"
+                            alt="Card image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="#" class="text-decoration-none">
+                                    <p>Du lịch Phượng Hoàng cổ trấn Trung Quốc | Kinh nghiệm A-Z</p>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-dark text-start">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    11/14/2023
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12">
+                        <img class="card-img-top" src="img/post/Du-lich-Trung-Quoc-voi-nhung-net-dep-van-hoa.jpg"
+                            alt="Card image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="#" class="text-decoration-none">
+                                    <p>[Mới Nhất] Kinh nghiệm đi du lịch Trung Quốc tự túc DỄ nhất</p>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-dark text-start">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    11/10/2023
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <img class="card-img-top" src="img/post/tour-du-lich-trung-quoc-6-ngay-5-dem.jpg"
+                            alt="Card image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="#" class="text-decoration-none">
+                                    <p>TOP 5 Tour Trung Quốc 6 ngày 5 đêm bán chạy nhất 2024</p>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-dark text-start">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    11/10/2023
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-12 ps-2 p-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 border-2 border-bottom border-dark p-0">
+                            <h5 class="fw-bold text-uppercase">
+                                Kinh nghiệm du lịch VN
+                            </h5>
+                        </div>
+                        <div class="col-6 border-2 border-bottom border-secondary p-0">
+                            <p class="text-end text-secondary fw-bold">
+                                Xem thêm
+                                <i class="fa-solid fa-angle-right"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card border-0 pt-3 mb-1">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="img/post/xe-da-nang-di-ba-na-hills.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="#" class="text-decoration-none text-dark fw-bold">
+                                                <p>Gợi ý 4 loại xe Đà Nẵng đi Bà Nà Hills</p>
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <p class="text-dark text-start">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                01/20/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card border-0 pt-3 mb-1">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="img/post/gia-ve-ba-na-hills-da-nang.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="#" class="text-decoration-none text-dark fw-bold">
+                                                <p>[Cập nhật 2024] Giá vé Bà Nà Hills Đà Nẵng mới nhất</p>
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <p class="text-dark text-start">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                01/20/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card border-0 pt-3 mb-1">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="img/post/chi-phi-du-lich-da-nang.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="#" class="text-decoration-none text-dark fw-bold">
+                                                <p>
+                                                    Chi phí du lịch Đà Nẵng bao nhiêu? 5 tips giúp tiết kiệm chi
+                                                    phí
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <p class="text-dark text-start">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                01/20/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card border-0 pt-3 mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="img/post/Khu-du-lich-rung-dua-Bay-Mau.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="#" class="text-decoration-none text-dark fw-bold">
+                                                <p>
+                                                    Khám phá kinh nghiệm du lịch rừng dừa Bảy Mẫu ở Hội An #2024
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <p class="text-dark text-start">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                01/18/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card border-0 pt-3 mb-1">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="img/post/Trang-An-Passion-he-thong-phong-da-dang.jpg"
+                                        class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="#" class="text-decoration-none text-dark fw-bold">
+                                                <p>Tổng hợp 12 homestay Ninh Bình Tràng An giá cực #ÊM</p>
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <p class="text-dark text-start">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                01/18/2024
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Poster News -->
+    <!-- Start Contact -->
+    <section class="container-fluid p-3 bg-secondary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 col-sm-6 col-12 py-1">
+                    <a href="tel:0826151515" class="btn btn-warning rounded-pill w-100">
+                        <i class="fas fa-phone"></i>
+                        <span class="text">0826.15.15.15</span>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 py-1">
+                    <a href="tel:0826151515" class="btn btn-primary rounded-pill w-100">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Chat với chúng tôi</span>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 col-12 py-1">
+                    <a href="tel:0826151515" class="btn btn-info rounded-pill w-100">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Tư vấn ngay</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact -->
+</main>
