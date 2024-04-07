@@ -1,9 +1,15 @@
 <!-- login.html -->
 <main class="container-fluid p-0 m-0">
     <nav class="card">
-        <div class=""
-            style="filter: brightness(0.3);background-image: url(img/full01.jpg); background-position: 50% 50%; background-repeat: no-repeat !important; background-size: cover !important; width: 100%; height: 620px;">
-        </div>
+        <div class="" style="
+        filter: brightness(0.3);
+        background-image: url(img/full01.jpg);
+        background-position: 50% 50%;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        width: 100%;
+        height: 620px;
+      "></div>
         <div class="card-img-overlay d-flex flex-column justify-content-center">
             <div class="container">
                 <div class="row w-100">
@@ -12,11 +18,14 @@
                             <div class="row align-items-center">
                                 <div class="col">
                                     <div class="card-body text-center text-white">
-                                        <h4 class="card-title text-uppercase fw-bold">Du lịch giải sầu - quên hết âu
-                                            lo</h4>
+                                        <h4 class="card-title text-uppercase fw-bold">
+                                            Du lịch giải sầu - quên hết âu lo
+                                        </h4>
                                         <div class="card-text fw-bold">
-                                            <p>Nhanh tay tìm kiếm Tour và đặt Tour tại PT Travel để nhận được nhiều
-                                                ưu đãi!</p>
+                                            <p>
+                                                Nhanh tay tìm kiếm Tour và đặt Tour tại PT Travel để
+                                                nhận được nhiều ưu đãi!
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +34,7 @@
                     </div>
                 </div>
 
-                <div class="row m-auto justify-content-center" style="max-width:680px">
+                <div class="row m-auto justify-content-center" style="max-width: 680px">
                     <div class="col-12">
                         <div class="row align-items-center">
                             <div
@@ -38,7 +47,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-7 col-7 border border-0 p-0">
                                 <input type="search" class="form-control rounded-0" id="search"
-                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on">
+                                    placeholder="Tìm kiếm tour..." list="search-tour" autocomplete="on" />
                                 <datalist id="search-tour">
                                     <option value="Tour Đà Nẵng Hội An 3 ngày 2 đêm từ Hà Nội"></option>
                                     <option value="Tour Đà Nẵng Hội An 4 ngày 3 đêm từ Hà Nội"></option>
@@ -82,73 +91,109 @@
     </section>
     <section class="container py-4">
         <div class="row justify-content-center">
-            <form class="w-50" name="dangky">
+            <form class="form-group w-50 was-validated" name="registrationForm" ng-submit="submitRegistration()"
+                novalidate>
                 <h3>Đăng ký</h3>
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example0">Tên người dùng *</label>
-                    <input type="text" id="form2Example0" name="name" class="form-control" ng-model="InputName"
+                <div class="d-flex">
+                    <strong class="text-danger me-1">(*)</strong>
+                    <p>Đây là các trường bắt buộc</p>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="username">Họ và Tên <strong class="text-danger">*</strong></label>
+                    <input type="text" id="username" name="name" class="form-control" ng-model="user.name"
+                        autocomplete="username" ng-minlength="3" required />
+                    <div ng-show="registrationForm.username.$error.required && registrationForm.username.$dirty"
+                        class="invalid-feedback">
+                        Vui lòng nhập họ tên phải ít nhất có 3 ký tự.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email <strong class="text-danger">*</strong></label>
+                    <input type="email" id="email" name="email" class="form-control" ng-model="user.email"
+                        autocomplete="username" required ng-pattern="/^[a-zA-Z0-9._%+-]+@gmail\.com$/" />
+                    <div ng-show="registrationForm.email.$error.required && registrationForm.email.$dirty"
+                        class="invalid-feedback">
+                        Vui lòng nhập địa chỉ email.
+                    </div>
+                    <div ng-show="registrationForm.email.$error.pattern && registrationForm.email.$dirty"
+                        class="invalid-feedback">
+                        Địa chỉ email phải là định dạng @gmail.com.
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="phone">Số điện thoại <strong class="text-danger">*</strong></label>
+                    <input type="text" id="phone" name="phone" class="form-control" ng-model="user.phone" required
+                        ng-pattern="/^\d{9,}$/" />
+                    <div ng-show="registrationForm.phone.$error.required && registrationForm.phone.$dirty"
+                        class="invalid-feedback">
+                        Vui lòng nhập số điện thoại.
+                    </div>
+                    <div ng-show="registrationForm.phone.$error.pattern && registrationForm.phone.$dirty"
+                        class="invalid-feedback">
+                        Số điện thoại cần ít nhất 9 chữ số.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="password">Mật khẩu <strong class="text-danger">*</strong></label>
+                    <input type="password" id="password" name="password" class="form-control" ng-model="user.password"
+                        autocomplete="current-password" required
+                        ng-pattern="/^(?=.*[a-zA-Z]{4})(?=.*[0-9]{2}).{6,}$/" />
+                    <div ng-show="registrationForm.password.$error.required && registrationForm.password.$dirty"
+                        class="invalid-feedback">
+                        Vui lòng nhập mật khẩu.
+                    </div>
+                    <div ng-show="registrationForm.password.$error.pattern && registrationForm.password.$dirty"
+                        class="invalid-feedback">
+                        Mật khẩu cần có ít nhất 4 chữ và 2 số, tổng cộng ít nhất 6 ký tự.
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="confirmPassword">Nhập lại mật khẩu <strong
+                            class="text-danger">*</strong></label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                        autocomplete="new-password" ng-model="user.confirmPassword" required />
+                    <div ng-show="registrationForm.confirmPassword.$error.required && registrationForm.confirmPassword.$dirty"
+                        class="invalid-feedback">
+                        Vui lòng nhập lại mật khẩu.
+                    </div>
+                    <div ng-show="user.confirmPassword !== user.password && registrationForm.confirmPassword.$dirty"
+                        class="invalid-feedback">
+                        Mật khẩu nhập lại không khớp.
+                    </div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="agree" name="agree" ng-model="user.agree"
                         required />
-                    <p>{{dangky.name.$valid}}</p>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Địa chỉ email *</label>
-                    <input type="email" id="form2Example1" name="email" class="form-control" ng-model="InputEmail"
-                        required />
-                </div>
-
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example2">Số điện thoại *</label>
-                    <input type="number" id="form2Example2" name="phone" class="form-control" ng-model="InputPhone"
-                        required />
-                </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example3">Mật khẩu *</label>
-                    <input type="password" id="form2Example3" name="password" class="form-control"
-                        ng-model="InputPassword" required />
-                </div>
-
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example4">Nhập lại mật khẩu *</label>
-                    <input type="password" id="form2Example4" name="repassword" class="form-control"
-                        ng-model="InputRepassword" ng-pattern="InputPassword" required />
-                </div>
-
-                <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
-                    <div class="col">
-                        <!-- Checkbox -->
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="form2Example34"
-                                ng-model="agree" checked />
-                            <label class="form-check-label" for="form2Example34">
-                                Đồng ý với các
-                                <a href="#!" class="text-decoration-none">điều khoản</a>
-                            </label>
-                        </div>
+                    <label class="form-check-label text-dark" for="agree">
+                        Đồng ý với các <a href="#!" class="text-decoration-none">điều khoản</a> <strong
+                            class="text-danger">*</strong>
+                    </label>
+                    <div ng-show="registrationForm.agree.$error.required && registrationForm.agree.$dirty"
+                        class="invalid-feedback">
+                        Bạn cần đồng ý với các điều khoản.
                     </div>
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-warning text-white btn-block mb-4">
-                    Đăng nhập
+                <button type="submit" class="btn btn-warning text-white btn-block mb-4"
+                    ng-disabled="registrationForm.$invalid">
+                    Đăng ký
                 </button>
 
-
-                <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
-                    <div class="col">
-                        <!-- Simple link -->
-                        <a href="#!">Quên mật khẩu?</a>
-                    </div>
+                <div class="mb-4">
+                    <a href="#!" class="text-decoration-none">Quên mật khẩu?</a>
                 </div>
 
-                <!-- Register buttons -->
                 <div class="text-center">
-                    <p>Bạn đã là thành viên <a href="#!login">Đăng nhập</a></p>
+                    <p>Bạn đã là thành viên <a href="#!login" class="text-decoration-none">Đăng nhập</a></p>
                 </div>
             </form>
         </div>

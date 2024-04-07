@@ -31,13 +31,14 @@
 
     <script>
         var app = angular.module("myApp", ["ngRoute"]);
+
         app.config(function ($routeProvider) {
             $routeProvider
                 .when("/", { templateUrl: "main.html", controller: "myCtrl" })
                 .when("/detail/:id", { templateUrl: "oneProduct.html", controller: "myCtrl" })
                 .when("/du-lich-nuoc-ngoai", { templateUrl: "tour-nuoc-ngoai.html", controller: "myCtrl" })
-                .when("/login", { templateUrl: "login.html", controller: "myCtrl" })
-                .when("/register", { templateUrl: "register.html", controller: "myCtrl" })
+                .when("/login", { templateUrl: "login.html", controller: "LoginController" })
+                .when("/register", { templateUrl: "register.html", controller: "RegisterController" })
                 .otherwise({ templateUrl: "index.html", controller: "myCtrl" })
         })
         app.controller("myCtrl", function ($scope, $rootScope, $routeParams, $http) {
@@ -91,6 +92,81 @@
             $scope.huybo = function () {
                 $scope.orderByAll = 'id';
             }
+        });
+
+        // Hàm loại bỏ dấu và chuyển đổi thành chữ không dấu
+        function removeDiacritics(str) {
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        // Đăng nhập
+        app.controller('LoginController', function ($scope, $http) {
+            $scope.user = {};
+
+            // Hàm xử lý khi người dùng nhấn nút Đăng nhập
+            $scope.submitLoginForm = function () {
+                // Gọi API để lấy danh sách người dùng từ server
+                $http.get('http://localhost:3000/users')
+                    .then(function (response) {
+                        // Lấy danh sách người dùng từ response.data
+                        var users = response.data;
+
+                        // Tìm kiếm trong danh sách người dùng để kiểm tra đăng nhập
+                        var loggedInUser = users.find(function (user) {
+                            return user.email === $scope.user.email && user.password === $scope.user.password;
+                        });
+
+                        if (loggedInUser) {
+                            // Đăng nhập thành công
+                            alert('Đăng nhập thành công!');
+                        } else {
+                            // Đăng nhập thất bại
+                            alert('Đăng nhập thất bại. Vui lòng kiểm tra lại email và mật khẩu.');
+                        }
+                    })
+                    .catch(function (error) {
+                        // Xử lý lỗi khi gọi API không thành công
+                        console.error('Lỗi khi gọi API:', error);
+                        alert('Đăng nhập thất bại. Vui lòng thử lại sau.');
+                    });
+            };
+        });
+
+
+        // Đăng ký
+        app.controller('RegisterController', function ($scope, $http) {
+            // Khởi tạo đối tượng đăng ký
+            $scope.user = {};
+
+            // Hàm xử lý khi người dùng nhấn nút Đăng ký
+            $scope.submitRegistration = function () {
+                if ($scope.registrationForm.$valid) {
+                    // Xử lý đăng ký
+
+                    // Loại bỏ dấu và chuyển thành chữ không dấu
+                    var processedName = removeDiacritics($scope.user.name);
+                    // Xóa khoảng trắng và chuyển thành chữ thường
+                    processedName = processedName.replace(/\s+/g, '').toLowerCase();
+                    // Gán giá trị cho username
+                    $scope.user.username = processedName;
+
+                    $scope.user.role = 0;
+                    // console.log('Thông tin đăng ký:', $scope.user);
+                    // Gọi API hoặc xử lý dữ liệu ở đây
+                    $http.post("http://localhost:3000/users", $scope.user)
+                        .then(function (response) {
+                            // Xử lý khi đăng ký thành công
+                            alert("Đăng ký thành công!");
+                        })
+                        .catch(function (error) {
+                            // Xử lý khi đăng ký thất bại
+                            alert("Đăng ký thất bại:", error);
+                        });
+                } else {
+                    // Hiển thị thông báo lỗi nếu form chưa hợp lệ
+                    console.error('Form đăng ký chưa hợp lệ.');
+                }
+            };
         });
     </script>
     <!-- <script src="js/script.js"></script> -->
