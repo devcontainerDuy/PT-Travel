@@ -18,9 +18,36 @@
                             <a class="nav-link px-0 text-white" href="#">Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Hồ sơ năng lực </a>
+                            <a class="nav-link text-white" href="#">Hồ sơ năng lực</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- Sử dụng ng-if để kiểm tra trạng thái đăng nhập và hiển thị tương ứng -->
+                        <li class="nav-item" ng-show="isLoggedIn">
+                            <a class="nav-link px-0 text-white dropdown-toggle" data-bs-toggle="dropdown" role="button"
+                                aria-expanded="false" href="#">
+                                Xin chào: {{loggedInUser.name}}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Thông tin
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Xem giỏ hàng
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" ng-click="logout()">
+                                        <span>Đăng xuất</span>
+                                        <i class="fa-solid fa-arrow-right-from-bracket ps-4 pe-0"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item" ng-show="!isLoggedIn">
                             <a class="nav-link px-0 text-white" href="#!login">Đăng nhập</a>
                         </li>
                     </ul>

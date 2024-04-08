@@ -25,7 +25,7 @@
 
 <body ng-app="myApp">
 
-    <div ng-include="'header.html'"></div>
+    <div ng-controller="HeaderController" ng-include="'header.html'"></div>
     <div ng-view></div>
     <div ng-include="'footer.html'"></div>
 
@@ -40,7 +40,34 @@
                 .when("/login", { templateUrl: "login.html", controller: "LoginController" })
                 .when("/register", { templateUrl: "register.html", controller: "RegisterController" })
                 .otherwise({ templateUrl: "index.html", controller: "myCtrl" })
-        })
+        });
+
+
+        app.controller('HeaderController', function ($scope) {
+            // Kiểm tra xem người dùng đã đăng nhập hay chưa
+            var isLoggedIn = false;
+            var userData = localStorage.getItem('loggedInUser');
+
+            if (userData) {
+                // Đã đăng nhập
+                isLoggedIn = true;
+                // Lưu thông tin người dùng vào $scope
+                $scope.loggedInUser = JSON.parse(userData);
+            }
+            // Gán biến isLoggedIn vào $scope để sử dụng trên giao diện
+            $scope.isLoggedIn = isLoggedIn;
+
+            // Hàm đăng xuất
+            $scope.logout = function () {
+                // Xóa thông tin người dùng khỏi localStorage
+                localStorage.removeItem('loggedInUser');
+                // Đặt lại trạng thái đăng nhập về false
+                $scope.isLoggedIn = false;
+                // Xóa thông tin người dùng khỏi $scope
+                $scope.loggedInUser = null;
+            };
+        });
+
         app.controller("myCtrl", function ($scope, $rootScope, $routeParams, $http) {
             //Khai báo 1 mảng products rỗng 
             $scope.products = [];
@@ -52,20 +79,7 @@
                     console.log($scope.products);
                     // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
                     $scope.detailPro = $scope.products.find(item => item.id == $routeParams.id);
-                })
-            // .catch(function (error) {
-            //     // Xử lý lỗi nếu yêu cầu không thành công
-            //     console.error("Error fetching data:", error);
-            // });
-
-            // Lọc sản phẩm theo from: Hà Nội
-            $http.get("http://localhost:3000/products?from=H%C3%A0%20N%E1%BB%99i")
-                .then(function (reponse) {
-                    $scope.products = reponse.data;
-                    console.log($scope.products);
-                    // Lấy sản phẩm chi tiết thông qua id truyền vào routeParams
-                    $scope.fromHaNoi = $scope.products.find(item => item.id == $routeParams.id);
-                })
+                });
 
             $scope.limitToShow = 4;
             $scope.loadMore = function () {
@@ -110,24 +124,21 @@
                     .then(function (response) {
                         // Lấy danh sách người dùng từ response.data
                         var users = response.data;
-
                         // Tìm kiếm trong danh sách người dùng để kiểm tra đăng nhập
                         var loggedInUser = users.find(function (user) {
                             return user.email === $scope.user.email && user.password === $scope.user.password;
                         });
 
                         if (loggedInUser) {
-                            // Đăng nhập thành công
+                            // Lưu thông tin người dùng vào localStorage khi đăng nhập thành công
+                            localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+                            // Thực hiện các thao tác khác sau khi đăng nhập thành công
                             alert('Đăng nhập thành công!');
+                            window.location.href = 'index.html#!/';
                         } else {
                             // Đăng nhập thất bại
                             alert('Đăng nhập thất bại. Vui lòng kiểm tra lại email và mật khẩu.');
                         }
-                    })
-                    .catch(function (error) {
-                        // Xử lý lỗi khi gọi API không thành công
-                        console.error('Lỗi khi gọi API:', error);
-                        alert('Đăng nhập thất bại. Vui lòng thử lại sau.');
                     });
             };
         });
@@ -141,8 +152,6 @@
             // Hàm xử lý khi người dùng nhấn nút Đăng ký
             $scope.submitRegistration = function () {
                 if ($scope.registrationForm.$valid) {
-                    // Xử lý đăng ký
-
                     // Loại bỏ dấu và chuyển thành chữ không dấu
                     var processedName = removeDiacritics($scope.user.name);
                     // Xóa khoảng trắng và chuyển thành chữ thường
@@ -151,7 +160,6 @@
                     $scope.user.username = processedName;
 
                     $scope.user.role = 0;
-                    // console.log('Thông tin đăng ký:', $scope.user);
                     // Gọi API hoặc xử lý dữ liệu ở đây
                     $http.post("http://localhost:3000/users", $scope.user)
                         .then(function (response) {
