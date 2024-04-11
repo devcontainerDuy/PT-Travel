@@ -21,6 +21,28 @@
       "confirmPassword": "user123",
       "agree": true,
       "role": 0
+    },
+    {
+      "id": "c26a",
+      "name": "Trần Khánh Duy",
+      "email": "khanhduytran1803@gmail.com",
+      "phone": "0778046259",
+      "password": "khanhduy123",
+      "confirmPassword": "khanhduy123",
+      "agree": true,
+      "username": "trankhanhduy",
+      "role": 0
+    },
+    {
+      "id": "56ca",
+      "name": "Trần Khánh Duy",
+      "email": "khanhduytran1803@gmail.com",
+      "phone": "0778046259",
+      "password": "khanhduy123",
+      "confirmPassword": "khanhduy123",
+      "agree": true,
+      "username": "trankhanhduy",
+      "role": 0
     }
   ],
   "products": [
